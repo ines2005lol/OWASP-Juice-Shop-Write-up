@@ -23,10 +23,15 @@ What finally worked.
 
 Explain the vulnerability in my own words.
 
-## How to fix it
-
-How a developer could prevent this.
-
 ## What I learned
 
 -
+
+## Remediation
+
+**Vulnerability:** name it, and the related OWASP Top 10 category.
+
+How a developer should fix it:
+
+1.
+2.

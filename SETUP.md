@@ -23,7 +23,7 @@ docker pull bkimminich/juice-shop
 ### 3. Start Juice Shop
 
 ```powershell
-docker run --rm -p 127.0.0.1:3000:3000 bkimminich/juice-shop
+docker run --rm -p 127.0.0.1:3001:3000 bkimminich/juice-shop
 ```
 
 What the flags mean:
@@ -31,11 +31,11 @@ What the flags mean:
 | Flag | Meaning |
 |------|---------|
 | `--rm` | Delete the container when it stops (keeps things clean) |
-| `-p 127.0.0.1:3000:3000` | Make the app reachable on port 3000, **only from my own machine** |
+| `-p 127.0.0.1:3001:3000` | Port 3001 on my machine forwards to port 3000 inside the container (where Juice Shop listens), **only reachable from my own machine** |
 
 ### 4. Open it in the browser
 
-Go to **http://localhost:3000**
+Go to **http://localhost:3001**
 
 ### 5. Stop it
 
