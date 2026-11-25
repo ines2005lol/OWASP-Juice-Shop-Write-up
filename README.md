@@ -41,13 +41,16 @@ See [SETUP.md](SETUP.md) for how to run Juice Shop locally.
 ├── README.md        # This file
 ├── SETUP.md         # How to install and run Juice Shop
 ├── PROGRESS.md      # Checklist of challenges solved
+├── REVISIT.md       # Challenges I want to redo on my own
+├── screenshots/     # Screenshots used in the writeups
 └── writeups/        # One file per challenge
     └── _TEMPLATE.md # Template to copy for each new writeup
 ```
 
 ## Progress
 
-Tracked in [PROGRESS.md](PROGRESS.md).
+Tracked in [PROGRESS.md](PROGRESS.md). Challenges I want to go back to are
+listed in [REVISIT.md](REVISIT.md).
 
 ## Disclaimer
 
