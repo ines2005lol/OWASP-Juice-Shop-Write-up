@@ -86,8 +86,6 @@ who opens DevTools.
 - SPAs define their routes in client-side code, so looking at the routes shows
   every page the app has, even ones that aren't linked.
 - Hiding something is not the same as securing it.
-- `[TODO: anything else you noticed or learned]`
-
 ## Remediation
 
 **Vulnerability:** sensitive page hidden only by not linking to it (security
