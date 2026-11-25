@@ -10,6 +10,7 @@ Challenges I've solved, with a link to each writeup.
 | 4 | Privacy Policy | ⭐ | Miscellaneous | 2026-11-25 | [link](writeups/04-privacy-policy.md) |
 | 5 | Bully Chatbot | ⭐ | Miscellaneous | 2026-11-25 | [link](writeups/05-bully-chatbot.md) |
 | 6 | Web3 Sandbox | ⭐ | Broken Access Control | 2026-11-25 | [link](writeups/06-web3-sandbox.md) |
+| 7 | Confidential Document | ⭐ | Sensitive Data Exposure | 2026-11-25 | [link](writeups/07-confidential-document.md) |
 
 <!-- Example row:
 | 1 | Score Board | ⭐ | Miscellaneous | 2026-11-26 | [link](writeups/01-score-board.md) |
@@ -18,4 +19,5 @@ Challenges I've solved, with a link to each writeup.
 | 4 | Privacy Policy | ⭐ | Miscellaneous | 2026-11-25 | [link](writeups/04-privacy-policy.md) |
 | 5 | Bully Chatbot | ⭐ | Miscellaneous | 2026-11-25 | [link](writeups/05-bully-chatbot.md) |
 | 6 | Web3 Sandbox | ⭐ | Broken Access Control | 2026-11-25 | [link](writeups/06-web3-sandbox.md) |
+| 7 | Confidential Document | ⭐ | Sensitive Data Exposure | 2026-11-25 | [link](writeups/07-confidential-document.md) |
 -->
