@@ -15,6 +15,7 @@ Challenges I've solved, with a link to each writeup.
 | 9 | Mass Dispel | ⭐ | Miscellaneous | 2026-11-25 | [link](writeups/09-mass-dispel.md) |
 | 10 | Missing Encoding | ⭐ | Improper Input Validation | 2026-11-25 | [link](writeups/10-missing-encoding.md) |
 | 11 | Outdated Allowlist | ⭐ | Unvalidated Redirects | 2026-11-25 | [link](writeups/11-outdated-allowlist.md) |
+| 12 | Repetitive Registration | ⭐ | Improper Input Validation | 2026-11-26 | [link](writeups/12-repetitive-registration.md) |
 
 <!-- Example row:
 | 1 | Score Board | ⭐ | Miscellaneous | 2026-11-26 | [link](writeups/01-score-board.md) |
@@ -28,4 +29,5 @@ Challenges I've solved, with a link to each writeup.
 | 9 | Mass Dispel | ⭐ | Miscellaneous | 2026-11-25 | [link](writeups/09-mass-dispel.md) |
 | 10 | Missing Encoding | ⭐ | Improper Input Validation | 2026-11-25 | [link](writeups/10-missing-encoding.md) |
 | 11 | Outdated Allowlist | ⭐ | Unvalidated Redirects | 2026-11-25 | [link](writeups/11-outdated-allowlist.md) |
+| 12 | Repetitive Registration | ⭐ | Improper Input Validation | 2026-11-26 | [link](writeups/12-repetitive-registration.md) |
 -->
