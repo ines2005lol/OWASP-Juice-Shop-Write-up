@@ -36,12 +36,29 @@ the start (`ᓚᘏᗢ`, which look like a cat).
 
 ![Original img src with unencoded # characters in the file name](../screenshots/10-missing-encoding/original-src.png)
 
-Because of the first `#`, the browser only requests
-`assets/public/images/uploads/ᓚᘏᗢ-` from the server, and treats
-`#zatschi-#whoneedsfourlegs-1572600969477.jpg` as a fragment. That file
-doesn't exist, so the photo can't load.
+### Step 2: Check what the browser actually requested
 
-### Step 2: Encode the file name
+To see what really happened, I looked at the image's request in DevTools'
+**Network** tab. The request URL was:
+
+```
+http://localhost:3001/assets/public/images/uploads/%E1%93%9A%E1%98%8F%E1%97%A2-
+```
+
+Decoding the end of it gives just:
+
+```
+ᓚᘏᗢ-
+```
+
+So the browser only sent the part **before the first `#`**. Everything after
+it (`#zatschi-#whoneedsfourlegs-1572600969477.jpg`) was treated as a fragment
+and never reached the server. The browser asked for a file called `ᓚᘏᗢ-`,
+which isn't the photo, so the photo couldn't load.
+
+![Network tab showing the request URL cut off before the first #](../screenshots/10-missing-encoding/network-request.png)
+
+### Step 3: Encode the file name
 
 I encoded the file name with [urlencoder.org](https://www.urlencoder.org/):
 
@@ -54,7 +71,7 @@ I encoded the file name with [urlencoder.org](https://www.urlencoder.org/):
 - the cat characters `ᓚᘏᗢ` became `%E1%93%9A%E1%98%8F%E1%97%A2` (their UTF-8
   bytes)
 
-### Step 3: Replace the `src`
+### Step 4: Replace the `src`
 
 In the Elements tab I replaced the file name in the image's `src` with the
 encoded version. This time the browser requested the full, correct file name,
@@ -77,6 +94,8 @@ server returns the photo.
   URL-encoded to be used as normal text.
 - DevTools' Elements tab lets you edit a page's HTML live, which is handy for
   testing fixes and payloads.
+- The Network tab shows the exact URL the browser sent, which is the best way
+  to confirm what the server actually received.
 
 ## Remediation
 
