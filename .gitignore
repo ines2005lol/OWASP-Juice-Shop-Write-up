@@ -1,0 +1,9 @@
+# If Juice Shop is cloned here for Option 2, don't commit it
+juice-shop/
+node_modules/
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
