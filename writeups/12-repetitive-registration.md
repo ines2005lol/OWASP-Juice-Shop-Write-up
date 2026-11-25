@@ -33,45 +33,86 @@ answer, and the password fields, but typed **different** values in "Password"
 and "Repeat Password". The form showed an error and the **Register** button
 stayed greyed out.
 
-### Step 2: Inspect the Register button
+### Step 2: Understanding the frontend validation
 
-I right-clicked the Register button and opened it in DevTools' **Elements**
-tab. The button has `id="registerButton"` and the attribute
-**`disabled="true"`**. That's what stops it from being clicked: the browser's
-own check decided the passwords don't match and disabled the button.
+The **frontend** is the part of the application running in my browser. It
+contains logic that checks whether both passwords match. Conceptually, it
+works like this:
+
+```js
+if (password !== passwordRepeat) {
+    disableRegisterButton();
+}
+```
+
+This is why the Register button had:
+
+```html
+disabled="true"
+```
+
+I confirmed it by right-clicking the button and opening it in DevTools'
+**Elements** tab:
 
 ![Register button in the Elements tab with disabled="true"](../screenshots/12-repetitive-registration/disabled-button.png)
 
-**What `disabled` does:** it's a standard HTML attribute for buttons and form
-fields. When an element has it:
+`disabled` is a standard HTML attribute. While it's on the button:
 
-- it **can't be clicked** or selected with the keyboard
-- it's shown **greyed out**
-- a disabled button **can't submit** the form
+- the button is **greyed out**
+- it **can't be clicked** or reached with the keyboard
+- it **can't submit** the form
 
-It's a **boolean attribute**: what matters is whether it's there at all, not
-its value. Even `disabled="false"` still disables the button. The only way to
-enable it is to remove the attribute completely.
+It's also a **boolean attribute**: only its presence matters, not its value.
+Even `disabled="false"` still disables the button. The only way to enable it
+is to remove the attribute completely.
 
-Juice Shop's frontend (Angular) adds `disabled` to the Register button while
-the form is invalid, for example when the passwords don't match, and removes it
-once the form is valid. It's purely a browser-side check: it changes how the
-page behaves, but nothing stops a user from editing it. If you type in the form
-again after removing it, Angular may add it back, so remove it right before
-clicking.
+Here's the important distinction:
 
-### Step 3: Remove `disabled` and submit
+> **Disabling a button is not security enforcement.**
+> It is simply a user-interface restriction.
 
-I deleted the `disabled` attribute from the button in the Elements tab. The
-button became clickable, I clicked **Register**, and the account was created
-even though the two passwords were different. The challenge was solved.
+### Step 3: What I actually did
+
+I opened DevTools → **Elements** and modified the HTML.
+
+Originally:
+
+```html
+<button id="registerButton" disabled="true">
+    Register
+</button>
+```
+
+I changed it to:
+
+```html
+<button id="registerButton">
+    Register
+</button>
+```
+
+What happened?
+
+- The browser no longer considered the button disabled.
+- I could click **Register**.
+- The browser sent the registration request to the backend.
+- The backend **accepted the registration** even though the passwords didn't
+  match.
+
+That last point is the actual vulnerability. The challenge was solved.
+
+(Tip: if you type in the form again after removing `disabled`, Angular may add
+it back, so remove it right before clicking.)
 
 ## Why it works
 
-The "passwords must match" rule is only enforced in the browser, by disabling
-the button. The server never checks that the two passwords match. Once the
-browser-side block was removed, the server accepted the registration as it
-was.
+The "passwords must match" rule only exists in the **frontend**, as a disabled
+button. The **backend** never checks that the two passwords match. Removing
+the browser-side restriction was enough, because nothing on the server was
+there to stop the request.
+
+The browser is fully under the user's control. Any check that only happens
+there can be edited, skipped, or bypassed by sending the request directly.
 
 ## What I learned
 
