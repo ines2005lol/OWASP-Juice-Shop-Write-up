@@ -35,7 +35,19 @@ and always check `robots.txt` early.
 
 ## What I did
 
-### Step 1: Open the `/ftp` folder
+### Step 1: Look for routes in `main.js` (dead end)
+
+Since searching `main.js` worked for the Score Board and Web3 Sandbox, I
+started the same way: I looked through the routes in `main.js` and tested many
+of them, but none of them led to a confidential document.
+
+This makes sense looking back. The routes in `main.js` are **frontend
+(Angular) routes**, pages drawn by the JavaScript in the browser. `/ftp` is
+different: it's a folder served directly by the **backend server**, so it never
+appears in the frontend's route list. To find server-side paths, look at links
+to files (like `legal.md`) and at `robots.txt` instead.
+
+### Step 2: Open the `/ftp` folder
 
 I went to:
 
@@ -49,7 +61,7 @@ The server showed a directory listing with files like `acquisitions.md`,
 
 ![Directory listing of /ftp](../screenshots/07-confidential-document/ftp-listing.png)
 
-### Step 2: Open `acquisitions.md`
+### Step 3: Open `acquisitions.md`
 
 I opened `acquisitions.md`:
 
@@ -72,6 +84,8 @@ stored in that public folder, so anyone who finds the folder can read it.
 
 ## What I learned
 
+- `main.js` only lists frontend routes. Files and folders served by the backend
+  (like `/ftp`) won't show up there.
 - When a link points to a file, check the folder it lives in.
 - `robots.txt` can reveal paths the site owners don't want people to see.
 - Directory listing can expose a whole folder of internal files at once.
