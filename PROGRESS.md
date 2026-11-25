@@ -13,6 +13,7 @@ Challenges I've solved, with a link to each writeup.
 | 7 | Confidential Document | ⭐ | Sensitive Data Exposure | 2026-11-25 | [link](writeups/07-confidential-document.md) |
 | 8 | Error Handling | ⭐ | Security Misconfiguration | 2026-11-25 | [link](writeups/08-error-handling.md) |
 | 9 | Mass Dispel | ⭐ | Miscellaneous | 2026-11-25 | [link](writeups/09-mass-dispel.md) |
+| 10 | Missing Encoding | ⭐ | Improper Input Validation | 2026-11-25 | [link](writeups/10-missing-encoding.md) |
 
 <!-- Example row:
 | 1 | Score Board | ⭐ | Miscellaneous | 2026-11-26 | [link](writeups/01-score-board.md) |
@@ -24,4 +25,5 @@ Challenges I've solved, with a link to each writeup.
 | 7 | Confidential Document | ⭐ | Sensitive Data Exposure | 2026-11-25 | [link](writeups/07-confidential-document.md) |
 | 8 | Error Handling | ⭐ | Security Misconfiguration | 2026-11-25 | [link](writeups/08-error-handling.md) |
 | 9 | Mass Dispel | ⭐ | Miscellaneous | 2026-11-25 | [link](writeups/09-mass-dispel.md) |
+| 10 | Missing Encoding | ⭐ | Improper Input Validation | 2026-11-25 | [link](writeups/10-missing-encoding.md) |
 -->
